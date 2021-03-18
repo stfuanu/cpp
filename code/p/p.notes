@@ -1,0 +1,109 @@
+
+-------------------------------------------------------------------------------
+---------------------------SCOPE RESOLUTION OPERATOR---------------------------
+-------------------------------------------------------------------------------
+
+
+# Scope Resolution Operator is an operator which is used to access static or class members funtions from different classes , And It's symbol is double colon ( :: ) .
+
+Scope :
+# Scope can be defined as the block of codes between two curly braces { } , a variable or function belonging to this scope can't be accessed outside this "Scope" <alert> (. ::) , So to overcome this limitation we use "Scope Resolution Operator" .
+
+!Example! 
+[c++]
+
+#include<iostream> 
+using namespace std;
+
+int main()
+{
+	{
+		int a = 1 ; // Both Variable have same Name 
+		cout<<"Inner Block : "<<a<<endl;
+	}
+
+	int a = 99 ;
+	cout<<"Outer Block : "<<a<<endl;
+}	
+
+[end]
+
+
+
+
+
+
+There are Many use Cases of Scope Resolution Operator , some of them are as follows :
+
+
+
+1) To define any function outside the class :
+
+# If we are declaring a function in a class and then we can define it's content outside the class by using scope resolution operator (::) . We can understand by a simple example of Simple Interest Program .
+
+!Example! #>>>
+
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+
+2) To access a global variable when there is a local variable the same name :
+
+# We can use scope resolution operator to access the global variable if we have a local variable with the same name. To access the global x variable in the main class we can use scope resolution operator (i.e. ::x) .
+
+
+!Example! 
+[c++]
+
+#include<iostream> 
+using namespace std; 
+ 
+int x=100; // Global variable - Accessible by any function , it is not bounded by limitation of any class .
+ 
+int main() // Main Function
+{
+	int x; // Local variable - Only Main function can access it
+ 
+	cout<<" Enter Local Number : ";
+	cin>>x; 
+
+	cout<< " Local Value of x is = "<< x <<endl;
+	cout<< " Global Value of x is = "<< ::x <<endl;
+}								// Scope Resolution Operator
+[end]
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+
+3) To refer to a class inside another class (i.e. Nested Class) :
+
+# We can create nested class with SAME variable names in both the classes . But we can access both the variables using scope resolution operator. 
+
+#Syntax : Outer_Class::Inner_Class::(variable/Function) 
+
+!Example! #>>>
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+
+
+4) In case of  Multiple Inheritance :
+
+#If we have two parent classes with same variable names and we are inheriting both of them in a child class, then we can use scope resolution operator by specifying their class name with the variable to specify each of them individually.
+
+# Syntax : <object_name>.<Class_Name>::<Function>
+
+#Example : If we create two parent class A & B ,   and both of them have variable <x>. When we are inheriting both of them in Child class C, if not specified , we can get 'ambiguity'  error , so by using Scope Resolution Operator , we can access both <x> variables individually , hence eliminating ambiguity.
+
+
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+
+
+
+
+!-----------------------------------------------------------------------------!
+
+
